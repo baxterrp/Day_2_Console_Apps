@@ -12,7 +12,7 @@
             // CTRL arrows to move one word at a time
             Console.Write("test");
             Console.Write("test 2");
-            
+
             #region variables
             // concatenation
             Console.WriteLine("Hello, Tom!" + " and Boggs");
@@ -38,6 +38,29 @@
 
             // true/false is called boolean
             bool exampleBool = false;
+
+            // character char
+            char character = 'A';
+
+            // integer array
+            //0, 1, 2, 3, 4, 5 doesnt exist
+            int[] ages = new int[] { 98, 2, 3, 4, 5 };
+            Console.WriteLine(ages[0]);
+            ages[0] = 100;
+            Console.WriteLine(ages[0]);
+            //Console.WriteLine(ages[5]);
+            //ages[5] = 100;
+
+            int[] secondArray = new int[5];
+            Console.WriteLine("****** second array *****");
+            Console.WriteLine(secondArray[0]);
+            secondArray[0] = 1000;
+            secondArray[1] = 2000;
+            secondArray[2] = 3000;
+            secondArray[3] = 4000;
+            secondArray[4] = 5000;
+            Console.WriteLine(secondArray[0]);
+            Console.WriteLine("****** second array *****");
             #endregion
 
             #region operators
@@ -134,6 +157,134 @@
             }
 
             #endregion
+
+            #region loops
+            var people = new string[]
+            {
+                // 0       1      2       3            4     // 5
+                "Robert", "Tom", "Boggs", "Cortney", "Ryan", "Sean"
+            };
+
+            // i j k 
+
+            // adds 1 to i and assigns value to i
+            // i = i + 1
+            // i += 1
+            // i++
+            for (var i = 0; i < people.Length; i++)
+            {
+                // i = 0
+                // print people[0] "Robert"
+                // i++ which makes i = 1
+                Console.WriteLine(people[i]);
+            }
+
+            var numbers = new int[] { 4, 5, 21, 4, 5, 9 };
+            var sumOfArray = 0;
+
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                sumOfArray += numbers[i];
+            }
+
+            Console.WriteLine(sumOfArray);
+            // FOR LOOP
+            //for(var i = 1; i <=10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //var index = 0;
+            //while (index < 10)
+            //{
+            //    Console.WriteLine("testing the while loop" + index);
+            //    index++;
+            //}
+
+            var isRobert = true;
+            var person = "garbage";
+
+            // WHILE LOOP
+            // might not run if condition is false
+            while (!isRobert)
+            {
+                Console.WriteLine("Enter a name");
+                person = Console.ReadLine();
+
+                isRobert = person == "Robert";
+
+                if (isRobert)
+                {
+                    Console.WriteLine("Hi Robert");
+                }
+                else
+                {
+                    Console.WriteLine("You're not Robert");
+                }
+            }
+
+            // DO WHILE LOOP
+            // always runs at least once
+            //do
+            //{
+            //    // stuff here
+            //    Console.WriteLine("Enter a name");
+            //    person = Console.ReadLine();
+
+            //} while (person != "Robert");
+
+            // FOREACH LOOP
+            Console.WriteLine("************* FOREACH LOOP *************");
+            foreach (var dude in people)
+            {
+                Console.WriteLine(dude);
+
+                if (dude == "Boggs")
+                {
+                    break;
+                }
+            }
+
+            //var wasAbleToParse = false;
+
+            //do
+            //{
+            //    int intInput;
+            //    var input = "";
+
+            //    Console.WriteLine("Enter a number");
+            //    input = Console.ReadLine();
+            //    wasAbleToParse = int.TryParse(input, out intInput);
+            //    //intInput = int.Parse(input);
+            //    if (wasAbleToParse == true)
+            //    {
+            //        if (intInput >= 21)
+            //        {
+            //            Console.WriteLine("Have a drink");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Go to school");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        // string concatenation
+            //        Console.WriteLine(input + " is not a valid integer! with the concatenation");
+
+            //        // string interpolation
+            //        Console.WriteLine($"{input} is not valid integer with interpolation");
+
+            //        Console.WriteLine("Try again.");
+            //    }
+            //} while (wasAbleToParse == false);
+
+            #endregion
+
+            for(var i = 2; i <= 100 ; i += 2 )
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
